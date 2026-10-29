@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Panel · Gasparotto Viajes</title>
+<style>
+:root{--b:#003195;--o:#ee964b;--bg:#f5f6fa;--t:#1c2333;--m:#6b7390;--ok:#1a9d57;--wr:#e0a100;--bd:#c62828}
+*{box-sizing:border-box}body{margin:0;font:15px/1.45 system-ui,sans-serif;background:var(--bg);color:var(--t)}
+h2{margin:0;font-size:20px}h3{margin:0 0 10px;font-size:16px}
+header{background:var(--b);color:#fff;padding:10px 20px;display:flex;gap:6px;align-items:center;flex-wrap:wrap;position:sticky;top:0;z-index:5}
+header b{margin-right:auto}header a,header button{background:none;border:0;color:#fff;cursor:pointer;padding:7px 11px;border-radius:6px;font:inherit;text-decoration:none}
+header .on{background:var(--o)}header .n{background:var(--bd);border-radius:10px;padding:0 6px;font-size:11px;margin-left:4px}
+main{max-width:1060px;margin:20px auto;padding:0 16px 80px}
+.card{background:#fff;border-radius:10px;padding:16px;margin-bottom:12px;box-shadow:0 1px 3px #0001}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.grow{flex:1;min-width:0}
+.grid{display:grid;grid-template-columns:1fr 340px;gap:16px;align-items:start}@media(max-width:860px){.grid{grid-template-columns:1fr}}
+input,select,textarea{width:100%;padding:9px;border:1px solid #cfd4e2;border-radius:6px;font:inherit;margin:4px 0 10px;background:#fff}
+input:focus,select:focus,textarea:focus,.ed:focus{outline:2px solid var(--o);outline-offset:0}
+input[type=checkbox]{width:auto;margin:0 6px 0 0}
+label{font-size:12px;font-weight:600;color:#55607a;display:block}
+button{font:inherit}button.p{background:var(--b);color:#fff;border:0;padding:9px 16px;border-radius:6px;cursor:pointer}
+button.s,a.s{background:#e8ebf4;border:0;padding:7px 12px;border-radius:6px;cursor:pointer;color:var(--t);text-decoration:none;font-size:14px}button.d{background:#fde8e8;color:#b00}
+.ed{border:1px solid #cfd4e2;border-radius:6px;min-height:260px;padding:12px;background:#fff;line-height:1.6}.ed img{max-width:100%;height:auto}
+.tb{display:flex;gap:4px;flex-wrap:wrap;margin:4px 0 6px}.tb button{min-width:34px}
+small,.muted{color:var(--m)}.tag{font-size:11px;background:var(--o);color:#fff;border-radius:4px;padding:1px 6px}
+.dot{width:12px;height:12px;border-radius:50%;flex:none}.dot.ok{background:var(--ok)}.dot.warn{background:var(--wr)}.dot.bad{background:var(--bd)}
+.cnt{float:right;font-weight:400}.cnt.ok{color:var(--ok)}.cnt.warn{color:var(--wr)}.cnt.bad{color:var(--bd)}
+.serp{border:1px solid #e1e4ee;border-radius:8px;padding:12px;background:#fff;font-family:Arial,sans-serif}
+.serp .u{font-size:12px;color:#202124;margin-bottom:2px;word-break:break-all}.serp .t{font-size:18px;color:#1a0dab;line-height:1.25}.serp .ds{font-size:13px;color:#4d5156;margin-top:3px}
+.chip{display:inline-block;font-size:12px;border-radius:12px;padding:2px 9px;margin:2px 4px 2px 0}.chip.bad{background:#fde8e8;color:var(--bd)}.chip.warn{background:#fff4d6;color:#8a6500}
+.pr{display:flex;gap:6px;flex-wrap:wrap}.pr input{width:130px;margin:0}
+.thumb{max-width:100%;max-height:160px;border-radius:6px;display:block;margin-bottom:8px}
+.stat{flex:1;min-width:140px;text-align:center}.stat b{font-size:26px;display:block}
+#msg{position:fixed;bottom:16px;right:16px;background:#222;color:#fff;padding:10px 16px;border-radius:8px;display:none;max-width:80vw;z-index:9}#msg a{color:#ffd9b0}
+.err{color:var(--bd);font-size:13px;min-height:18px}
+
+.shell{display:grid;grid-template-columns:230px 1fr;min-height:100vh}.shell main{width:100%;max-width:1060px;margin:20px auto}
+.side{background:var(--b);color:#fff;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;padding:14px 10px;gap:4px;overflow:auto}
+.side .lg2{background:#fff;border-radius:10px;padding:10px;margin-bottom:12px;text-align:center}.side .lg2 img{height:70px;max-width:100%;width:auto}
+.side button,.side a{display:flex;justify-content:space-between;align-items:center;background:none;border:0;color:#fff;cursor:pointer;padding:9px 12px;border-radius:8px;font:inherit;text-decoration:none;text-align:left}
+.side button:hover,.side a:hover{background:#ffffff1f}.side .on,.side .on:hover{background:var(--o)}.side .sp2{margin-top:auto}
+.n{background:var(--bd);border-radius:10px;padding:0 6px;font-size:11px;margin-left:4px}
+@media(max-width:860px){.shell{grid-template-columns:1fr}.side{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;padding:8px}.side .lg2{flex-basis:100%;margin:0 0 4px;padding:6px}.side .lg2 img{height:44px}.side .sp2{margin-top:0;margin-left:auto}}
+.th{width:56px;height:56px;object-fit:cover;border-radius:8px;flex:none;background:#e8ebf4;display:grid;place-items:center;color:#9aa3bd}
+.chip.ok{background:#e3f6ec;color:#116b3a}.stat span{color:var(--m);font-size:13px}
+[hidden]{display:none!important}
+.lg{min-height:100vh;display:grid;place-items:center;padding:24px;background:linear-gradient(160deg,#0a3fae 0%,#002a80 45%,#001445 100%);position:relative;overflow:hidden}
+.lg::before{content:"";position:absolute;width:720px;height:720px;right:-240px;top:-260px;border-radius:50%;background:radial-gradient(circle,#ffffff1c,#ffffff00 70%)}
+.lg::after{content:"";position:absolute;width:520px;height:520px;left:-200px;bottom:-240px;border-radius:50%;background:radial-gradient(circle,#ee964b33,#ee964b00 70%)}
+.lgc{position:relative;z-index:1;width:min(430px,100%);background:#fff;border-radius:18px;padding:34px 34px 22px;box-shadow:0 30px 80px #00081f66;text-align:center;animation:up .45s ease}
+.lgl{height:104px;width:auto;max-width:100%}
+.lgc h1{margin:14px 0 4px;font-size:21px;letter-spacing:-.2px;color:var(--t)}.lgs{margin:0 0 18px;color:var(--m);font-size:14px}
+.tm{font:12px/1.7 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#55607a;background:#f4f6fb;border:1px solid #e3e7f2;border-radius:10px;padding:10px 14px;text-align:left;margin-bottom:16px;min-height:64px}
+.tm .l{white-space:pre-wrap;word-break:break-word}.tm .c{color:#003195}.tm .m{color:#8d96b2}.tm .st{display:inline-block;min-width:18px;font-weight:700}
+.tm .ok{color:#1a9d57}.tm .ko{color:#c62828}.tm .wt{color:#e0a100}.tm .bl{animation:bl 1s steps(1) infinite}
+#lf{text-align:left}#lf label{font-size:13px;color:#33405e;margin-bottom:2px}
+.pwr{position:relative}.pwr input{padding:12px 64px 12px 14px;margin:4px 0 6px;font-size:16px;border:1.5px solid #cfd4e2;border-radius:10px;background:#fff;color:var(--t)}
+.pwr input:focus{outline:0;border-color:var(--b);box-shadow:0 0 0 3px #00319522}
+.pwr button{position:absolute;right:6px;top:9px;background:none;border:0;color:var(--b);cursor:pointer;font-size:13px;font-weight:600;padding:6px 8px;border-radius:6px}
+.lerr{color:var(--bd);font-size:13px;min-height:20px}
+.lgb{width:100%;padding:13px;font-size:16px;font-weight:600;border-radius:10px;margin-top:4px;background:var(--b)}.lgb:hover{background:#00287a}.lgb:disabled{opacity:.7;cursor:wait}
+.lgf{margin:18px 0 0;font-size:12px;color:#9aa3bd}
+.shake{animation:sk .35s}@keyframes bl{50%{opacity:.25}}@keyframes sk{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}@keyframes up{from{opacity:0;transform:translateY(12px)}}
+</style></head><body>
+<div id="app"></div><div id="msg" role="status"></div>
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)],app=$('#app');
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const strip=h=>(new DOMParser().parseFromString(h||'','text/html').body.textContent||'').replace(/\s+/g,' ').trim();
+const slugify=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,80);
+const PAGES=[["/ofertas-de-tangos-em-buenos-aires/","Tangos"],["/oferta-de-passeios-em-buenos-aires/","Paseos"],["/ofertas-viagens-a-buenos-aires/","Ofertas"],["/tango-porteno-vip/","Tango Porteño VIP"],["/madero-tango-black/","Madero Tango Black"],["/sunset-navegacao-com-open-bar-pelo-rio-de-la-plata/","Sunset Río de la Plata"],["/transfer-aeroporto-eze-aep/","Transfer"],["/","Home"]];
+const PREFIX={posts:'/blog/',packages:'/paquetes/'};
+let CATS={},ME={},tab=(location.hash||'#home').slice(1),DATA={posts:null,packages:null},dirty=false;
+const toast=(t,ms=3500)=>{const m=$('#msg');m.innerHTML=t;m.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>m.style.display='none',ms)};
+addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue=''}});
+const leave=()=>!dirty||confirm('Tenés cambios sin guardar. ¿Salir igual?');
+
+async function api(path,method='GET',body){
+  const r=await fetch('/api/'+path,{method,headers:{'content-type':'application/json'},body:body&&JSON.stringify(body)});
+  const d=await r.json().catch(()=>({}));
+  if(r.status===401&&path!=='login'){login();throw 0}
+  if(!r.ok){if(path!=='login')toast(esc(d.error||'Error'));throw d}
+  return d}
+const load=async(k,force)=>{if(force||!DATA[k])DATA[k]=await api(k);return DATA[k]};
+
+/* ---------- SEO: reglas de revisión ---------- */
+const full=t=>/gasparotto/i.test(t)?t:`${t} | Gasparotto Viajes`;
+function issues(k,r){const o=[],add=(l,m)=>o.push({l,m});
+  const t=full(r.seo_title||r.title||''),d=r.seo_description||strip(r.excerpt),body=strip(r.content);
+  if(t.length>62)add('warn',`Título de Google largo (${t.length}/60): se corta`);
+  if(!d)add('bad','Sin descripción para Google');else if(d.length<70)add('warn',`Descripción corta (${d.length}/70–160)`);else if(d.length>160)add('warn',`Descripción larga (${d.length}/160)`);
+  if(!r.image)add('warn','Sin imagen');else if(!r.image_alt)add('warn','Imagen sin texto alternativo');
+  if(k==='posts'&&body.length<300)add('warn','Contenido muy corto (menos de 300 caracteres)');
+  if(k==='packages'&&!body&&!strip(r.excerpt))add('warn','Sin descripción del paquete');
+  if(k==='packages'&&!r.price)add('warn','Sin precio (no se publica oferta en Google)');
+  if((r.slug||'').length>60)add('warn','Dirección web larga');
+  return o}
+const level=is=>is.some(i=>i.l==='bad')?'bad':is.length?'warn':'ok';
+
+/* ---------- login estilo terminal / shell ---------- */
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+let booting=false;
+function term(){const t=$('#tm');return{
+  clear(){t.innerHTML=''},
+  line(h,c=''){const d=document.createElement('div');d.className='l '+c;d.innerHTML=h;t.appendChild(d);return d},
+  async step(txt,fn,min=350){const d=this.line(`<span class="st wt bl">…</span> ${esc(txt)}`);let ok=true,out='';
+    try{const r=await Promise.all([fn?fn():'',sleep(min)]);out=r[0]||''}catch(e){ok=false;out=(e&&e.message)||'error'}
+    d.innerHTML=`<span class="st ${ok?'ok':'ko'}">${ok?'✓':'✕'}</span> ${esc(txt)}${out?` <span class="${ok?'m':'ko'}">· ${esc(out)}</span>`:''}`;return{ok,out}}}}
+async function login(msg){
+  if(booting)return;booting=true;dirty=false;
+  app.innerHTML=`<div class="lg"><div class="lgc" id="lgb"><img class="lgl" src="/assets/gasparotto-logo-v1.png" alt="Gasparotto Viajes"><h1>Panel de administración</h1><p class="lgs">Acceso restringido al equipo de Gasparotto Viajes</p><div class="tm" id="tm" aria-live="polite"></div><form id="lf" hidden><label for="pw">Clave de acceso</label><div class="pwr"><input id="pw" name="password" type="password" autocomplete="current-password" placeholder="Ingresá tu clave" spellcheck="false"><button type="button" id="eye" aria-label="Mostrar u ocultar la clave">Ver</button></div><div class="lerr" id="le" role="alert"></div><button class="p lgb" id="go" type="submit">Ingresar</button></form><p class="lgf">© Gasparotto Viajes · Conexión protegida</p></div></div>`;
+  const T=term(),t0=Date.now();let me=null;
+  T.line('<span class="c">$</span> iniciando panel…');
+  if(msg)T.line(esc(msg),'wt');
+  await T.step('Cargando módulos del panel',null,350);
+  const c1=await T.step('Conectando con el servidor (/api/me)',async()=>{const x=await fetch('/api/me',{cache:'no-store'});
+    if(x.ok){me=await x.json().catch(()=>null);return 'HTTP 200'}
+    if(x.status===401)return 'HTTP 401';
+    const d=await x.json().catch(()=>({}));throw new Error(d.error||'HTTP '+x.status)},450);
+  await T.step('Verificando sesión (cookie gv_admin)',async()=>me?'sesión válida':'sin sesión activa',450);
+  await T.step('Comprobando base D1 y almacenamiento R2',async()=>me?`D1 ${me.db?'conectada':'sin conectar'} · R2 ${me.r2?'activo':'desactivado'}`:'requiere autenticación',400);
+  await sleep(Math.max(0,2000-(Date.now()-t0)));
+  if(!c1.ok){T.line('No se pudo iniciar. Revisá la configuración y recargá la página.','ko');booting=false;return}
+  const enter=async m=>{T.line('<span class="ok">✓ Sesión iniciada.</span> Abriendo panel…');
+    await T.step('Cargando entradas y paquetes (D1)',async()=>{try{const[x,y]=await Promise.all([load('posts',true),load('packages',true)]);return `${x.length} entradas · ${y.length} paquetes`}catch{return 'sin datos todavía'}},350);
+    CATS=m.categories;ME=m;booting=false;await sleep(250);
+    try{shell()}catch(e){T.line('Error al abrir el panel: '+esc(e.message),'ko')}};
+  if(me)return enter(me);
+  const f=$('#lf'),pw=$('#pw'),go=$('#go'),le=$('#le');
+  f.hidden=false;pw.focus();booting=false;
+  $('#eye').onclick=()=>{const h=pw.type==='password';pw.type=h?'text':'password';$('#eye').textContent=h?'Ocultar':'Ver';pw.focus()};
+  f.onsubmit=async e=>{e.preventDefault();const val=pw.value;
+    if(!val.trim()){le.textContent='Ingresá la clave.';pw.focus();return}
+    le.textContent='';pw.readOnly=true;go.disabled=true;go.textContent='Verificando…';T.clear();
+    const fail=m=>{T.line('✕ Acceso denegado','ko');le.textContent=m||'Clave incorrecta. Revisá e intentá de nuevo.';pw.readOnly=false;go.disabled=false;go.textContent='Ingresar';
+      const b=$('#lgb');b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');pw.focus();pw.select()};
+    const r1=await T.step('Enviando credenciales (POST /api/login)',async()=>{const x=await fetch('/api/login',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({password:val})});
+      const d=await x.json().catch(()=>({}));if(!x.ok)throw new Error(d.error||'HTTP '+x.status);return 'HTTP 200'},450);
+    if(!r1.ok)return fail(r1.out==='Clave incorrecta'?'':r1.out);
+    await T.step('Verificando clave (HMAC-SHA256)',null,350);
+    await T.step('Firmando sesión · vence en 30 días',null,300);
+    let m=null;const r2=await T.step('Leyendo perfil del panel (/api/me)',async()=>{const x=await fetch('/api/me',{cache:'no-store'});
+      if(x.status===401)throw new Error('el navegador no guardó la sesión (¿cookies bloqueadas?)');if(!x.ok)throw new Error('HTTP '+x.status);m=await x.json();return 'HTTP 200'},350);
+    if(!r2.ok)return fail(r2.out);
+    enter(m)}}
+
+const NAV=[['home','Inicio','🏠'],['posts','Blog','📝'],['packages','Paquetes','🎫'],['prices','Precios','💲'],['seo','SEO','🔎']];
+function shell(skip){
+  app.innerHTML=`<div class="shell"><aside class="side"><div class="lg2"><img src="/assets/gasparotto-logo-v1.png" alt="Gasparotto Viajes"></div>${NAV.map(([k,l,i])=>`<button data-t="${k}" class="${tab===k?'on':''}"><span>${i} ${l}</span>${k==='seo'?'<span class="n" id="nb" hidden></span>':''}</button>`).join('')}<a href="/" target="_blank">🌐 Ver sitio ↗</a><button id="out" class="sp2">⎋ Salir</button></aside><main><div id="warn"></div><div id="v"></div></main></div>`;
+  $('#warn').innerHTML=[!ME.db&&'⚠ Falta conectar la base D1 (binding DB).',!ME.r2&&'ℹ Subida de imágenes desactivada (falta bucket R2 IMAGES): pegá URLs https de imagen.',!ME.whatsapp&&'ℹ Falta WHATSAPP_NUMBER: los botones Reservar de los paquetes nuevos irán a /reservas.'].filter(Boolean).map(t=>`<div class="card" style="background:#fff7e6">${t}</div>`).join('');
+  $$('[data-t]').forEach(b=>b.onclick=()=>{if(!leave())return;dirty=false;tab=b.dataset.t;location.hash=tab;shell()});
+  $('#out').onclick=async()=>{await api('logout','POST');DATA={posts:null,packages:null};login()};
+  if(!skip)({home,posts:list,packages:list,prices,seo})[tab]?.();
+  Promise.all([load('posts'),load('packages')]).then(([a,b])=>{const n=[...a.map(r=>['posts',r]),...b.map(r=>['packages',r])].filter(([k,r])=>r.published&&issues(k,r).length).length;const e=$('#nb');if(e&&n){e.textContent=n;e.hidden=false}}).catch(()=>{})}
+
+/* ---------- inicio (resumen) ---------- */
+const ago=s=>{const t=Date.parse(String(s||'').replace(' ','T')+'Z');if(!t)return '';const m=Math.round((Date.now()-t)/60000);return m<1?'recién':m<60?`hace ${m} min`:m<1440?`hace ${Math.round(m/60)} h`:`hace ${Math.round(m/1440)} d`};
+async function home(){const v=$('#v');v.innerHTML='<p class="muted">Cargando…</p>';
+  const[po,pk]=await Promise.all([load('posts',true),load('packages',true)]);
+  const all=[...po.map(r=>['posts',r]),...pk.map(r=>['packages',r])],pub=all.filter(([,r])=>r.published),obs=pub.filter(([k,r])=>issues(k,r).length);
+  const rec=[...all].sort((x,y)=>String(y[1].updated_at||y[1].created_at).localeCompare(String(x[1].updated_at||x[1].created_at))).slice(0,6);
+  const h=new Date().getHours(),sal=h<6?'Buenas noches':h<13?'Buen día':h<20?'Buenas tardes':'Buenas noches';
+  const chip=(ok,t)=>`<span class="chip ${ok?'ok':'bad'}">${ok?'✓':'✕'} ${t}</span>`;
+  v.innerHTML=`<h2>${sal} 👋</h2><p class="muted" style="margin:2px 0 14px">Resumen de Gasparotto Viajes</p>
+  <div class="row">${[[po.filter(r=>r.published).length,'entradas de blog'],[pk.filter(r=>r.published).length,'paquetes publicados'],[all.length-pub.length,'borradores'],[obs.length,'con observaciones SEO']].map(([n,l])=>`<div class="card stat"><b>${n}</b><span>${l}</span></div>`).join('')}</div>
+  <div class="row" style="margin-bottom:12px"><button class="p" data-go="posts">+ Nueva entrada</button><button class="p" data-go="packages">+ Nuevo paquete</button><button class="s" data-go="prices">Editar precios</button><button class="s" data-go="seo">Revisar SEO</button></div>
+  <div class="grid"><div class="card"><h3>Últimas modificaciones</h3>${rec.map(([k,r])=>`<div class="row" style="padding:8px 0;border-top:1px solid #eef0f6">${r.image?`<img class="th" src="${esc(r.image)}" alt="" loading="lazy">`:'<div class="th">🖼</div>'}<div class="grow"><b>${esc(r.title)}</b> ${r.published?'':'<span class="tag">borrador</span>'}<br><small>${k==='posts'?'Blog':'Paquete'} · ${esc(ago(r.updated_at||r.created_at))}</small></div><button class="s" data-k="${k}" data-id="${r.id}">Editar</button></div>`).join('')||'<p class="muted">Todavía no hay contenido. Creá la primera entrada o paquete.</p>'}</div>
+  <div class="card"><h3>Estado del sistema</h3>${chip(ME.db,'Base D1')}${chip(ME.r2,'Imágenes R2')}${chip(ME.whatsapp,'WhatsApp')}<br><br><small>Sitio: <b>${esc((ME.site||'').replace(/^https?:\/\//,''))}</b></small><br><small>Atajo: Ctrl/⌘ + S guarda al editar.</small></div></div>`;
+  $$('[data-go]').forEach(b=>b.onclick=()=>{const g=b.dataset.go;tab=g;location.hash=g;shell(true);if(g==='posts'||g==='packages')form({published:1});else if(g==='prices')prices();else seo()});
+  $$('[data-id]',v).forEach(b=>b.onclick=()=>{tab=b.dataset.k;location.hash=tab;shell(true);form(DATA[tab].find(r=>r.id==b.dataset.id))})}
+
+/* ---------- listados ---------- */
+async function list(){
+  const k=tab,isP=k==='posts',rows=await load(k,true),v=$('#v');
+  v.innerHTML=`<div class="row" style="margin-bottom:12px"><h2 class="grow">${isP?'Entradas del blog':'Paquetes'} <small id="ct"></small></h2><button class="p" id="new">+ Nuevo</button></div>
+  <div class="row"><input id="q" class="grow" style="margin:0" placeholder="Buscar por título o dirección…" aria-label="Buscar"><select id="st" style="width:auto;margin:0"><option value="">Todos</option><option value="1">Publicados</option><option value="0">Borradores</option></select>${isP?'':`<select id="ca" style="width:auto;margin:0"><option value="">Todas las categorías</option>${Object.entries(CATS).map(([c,o])=>`<option value="${c}">${esc(o.label)}</option>`).join('')}</select>`}<select id="so" style="width:auto;margin:0"><option value="n">Más recientes</option><option value="a">A–Z</option><option value="s">Con observaciones SEO</option></select></div><div id="rows" style="margin-top:12px"></div>`;
+  const draw=()=>{const q=$('#q').value.toLowerCase(),st=$('#st').value,ca=$('#ca')?.value||'',so=$('#so').value;
+    const f=rows.filter(r=>(!st||String(r.published?1:0)===st)&&(!ca||r.category===ca)&&(!q||(r.title+' '+r.slug).toLowerCase().includes(q)));
+    if(so==='a')f.sort((x,y)=>x.title.localeCompare(y.title,'es'));else if(so==='s')f.sort((x,y)=>issues(k,y).length-issues(k,x).length);
+    $('#ct').textContent=`(${f.length})`;
+    $('#rows').innerHTML=f.map(r=>{const is=issues(k,r),u=PREFIX[k]+esc(r.slug)+'/';
+      return `<div class="card row">${r.image?`<img class="th" src="${esc(r.image)}" alt="" loading="lazy">`:'<div class="th">🖼</div>'}<span class="dot ${level(is)}" title="${esc(is.map(i=>i.m).join('\n')||'SEO en orden')}"></span><div class="grow"><b>${esc(r.title)}</b> ${r.published?'':'<span class="tag">borrador</span>'}<br><small>${u}${!isP&&r.price?' · '+esc(r.price):''}${!isP&&CATS[r.category]?' · '+esc(CATS[r.category].label):''} · ${esc((r.updated_at||r.created_at||'').slice(0,10))}</small></div>${r.published?`<a class="s" href="${u}" target="_blank">Ver</a>`:''}<button class="s" data-e="${r.id}">Editar</button><button class="s" data-c="${r.id}">Duplicar</button><button class="s d" data-x="${r.id}">Borrar</button></div>`}).join('')||'<div class="card muted">No hay resultados.</div>'};
+  draw();['q','st','ca','so'].forEach(i=>{const e=$('#'+i);if(e){e.oninput=draw;e.onchange=draw}});
+  $('#new').onclick=()=>form({published:1});
+  $('#rows').onclick=async e=>{const b=e.target.closest('button');if(!b)return;const id=b.dataset.e||b.dataset.c||b.dataset.x,r=rows.find(x=>x.id==id);
+    if(b.dataset.e)form(r);
+    else if(b.dataset.c)form({...r,id:undefined,slug:'',title:r.title+' (copia)',published:0,legacy_id:''});
+    else if(b.dataset.x&&confirm(`¿Borrar "${r.title}"? Esta acción no se puede deshacer.`)){await api(`${k}/${id}`,'DELETE');toast('Borrado');list()}}}
+
+/* ---------- formulario ---------- */
+async function compress(file){
+  if(!/^image\/(jpeg|png|webp)$/.test(file.type))return file;
+  try{const bmp=await createImageBitmap(file),sc=Math.min(1,1600/Math.max(bmp.width,bmp.height));
+    const c=document.createElement('canvas');c.width=Math.round(bmp.width*sc);c.height=Math.round(bmp.height*sc);c.getContext('2d').drawImage(bmp,0,0,c.width,c.height);
+    const blob=await new Promise(r=>c.toBlob(r,'image/webp',.82));return blob&&blob.size<file.size?blob:file}catch{return file}}
+async function upload(file){
+  const f=await compress(file);
+  const r=await fetch('/api/upload',{method:'POST',headers:{'content-type':f.type},body:f}),d=await r.json().catch(()=>({}));
+  if(!d.url){toast(esc(d.error||'No se pudo subir'));throw d}
+  if(f!==file)toast(`Imagen optimizada: ${(file.size/1024).toFixed(0)} KB → ${(f.size/1024).toFixed(0)} KB`);
+  return d.url}
+
+function form(r){
+  const k=tab,isP=k==='posts',v=$('#v'),isNew=!r.id,origSlug=r.slug||'';let slugTouched=!!r.slug;dirty=false;
+  const inp=(key,label,ph='',extra='')=>`<label for="f-${key}">${label}</label><input id="f-${key}" data-k="${key}" value="${esc(r[key])}" placeholder="${esc(ph)}" ${extra}>`;
+  v.innerHTML=`<div class="row" style="margin-bottom:12px"><h2 class="grow">${isNew?'Nueva entrada':'Editar'}: ${isP?'blog':'paquete'}</h2><button class="s" id="back">← Volver</button></div>
+  <div class="grid"><div>
+   <div class="card">${inp('title','Título')}
+    <label for="f-slug">Dirección web <small>${PREFIX[k]}<b id="slugv"></b>/</small></label><input id="f-slug" data-k="slug" value="${esc(r.slug)}" placeholder="se genera desde el título"><div class="err" id="slugn" style="color:#8a6500"></div>
+    ${isP?inp('category','Etiqueta de categoría','Blog'):`<label for="f-category">Categoría (en qué página aparece)</label><select id="f-category" data-k="category">${Object.entries(CATS).map(([c,o])=>`<option value="${c}" ${r.category===c?'selected':''}>${esc(o.label)}</option>`).join('')}</select><div class="row"><div class="grow">${inp('price_old','Precio anterior (opcional)','R$ 615')}</div><div class="grow">${inp('price','Precio','R$ 445')}</div></div>`}
+    <label for="f-excerpt">Resumen corto <span class="cnt" id="c-ex"></span></label><textarea id="f-excerpt" data-k="excerpt" rows="3">${esc(r.excerpt)}</textarea></div>
+   <div class="card"><label>Contenido</label><div class="tb">${[['bold','<b>B</b>'],['italic','<i>I</i>'],['formatBlock:h2','H2'],['formatBlock:h3','H3'],['insertUnorderedList','• Lista'],['insertOrderedList','1. Lista'],['formatBlock:blockquote','“ Cita'],['createLink','Link'],['unlink','Sin link'],['removeFormat','Limpiar'],['img','Imagen']].map(([c,l])=>`<button type="button" class="s" data-c="${c}">${l}</button>`).join('')}<input type="file" id="cfile" accept="image/*" hidden></div>
+    <div class="ed" id="ed" contenteditable aria-label="Contenido">${r.content||''}</div></div>
+  </div><div>
+   <div class="card"><label><input type="checkbox" id="pub" ${r.published===0?'':'checked'}> Publicado</label><small>Desmarcalo para guardar como borrador (no se ve ni entra al sitemap).</small><br><br>
+    <div class="row"><button class="p" id="save">Guardar</button><button class="s" id="saveb">Guardar y volver</button></div><small>Ctrl/⌘ + S también guarda.</small><div id="after"></div></div>
+   <div class="card"><h3>Imagen</h3>${r.image?`<img class="thumb" id="thumb" src="${esc(r.image)}" alt="">`:'<img class="thumb" id="thumb" hidden alt="">'}
+    ${inp('image','URL de la imagen','https://… o subí un archivo')}<input type="file" id="file" accept="image/*" style="margin:0 0 10px"><small>Se achica y convierte a WebP antes de subir.</small>
+    ${inp('image_alt','Texto alternativo (describe la imagen)','Ej: Show de tango en Puerto Madero')}</div>
+   <div class="card"><h3>Cómo se ve en Google</h3>
+    <div class="serp"><div class="u" id="sp-u"></div><div class="t" id="sp-t"></div><div class="ds" id="sp-d"></div></div><br>
+    <label for="f-seo_title">Título para Google <span class="cnt" id="c-t"></span></label><input id="f-seo_title" data-k="seo_title" value="${esc(r.seo_title)}" placeholder="Si lo dejás vacío se usa el título">
+    <label for="f-seo_description">Descripción para Google <span class="cnt" id="c-d"></span></label><textarea id="f-seo_description" data-k="seo_description" rows="3" placeholder="Si la dejás vacía se usa el resumen corto">${esc(r.seo_description)}</textarea>
+    <small>Ideal: título hasta 60 caracteres, descripción entre 70 y 160, con la palabra clave y el beneficio.</small></div>
+   ${isP?`<details class="card"><summary>Avanzado</summary><br>${inp('legacy_id','ID viejo de WordPress (opcional)','Ej: 13149')}<small>Si este post existía en el sitio anterior como <code>/?p=13149</code>, los enlaces viejos apuntarán acá.</small></details>`:''}
+  </div></div>`;
+  const g=key=>($(`[data-k=${key}]`).value||'').trim(),ed=$('#ed');
+  const cnt=(el,n,lo,hi)=>{el.textContent=`${n}/${hi}`;el.className='cnt '+(n===0?'bad':n<lo?'warn':n>hi?'warn':'ok')};
+  const upd=()=>{const slug=g('slug')||slugify(g('title'))||'…',t=full(g('seo_title')||g('title')||'Título'),d=g('seo_description')||strip(g('excerpt'));
+    $('#slugv').textContent=slug;$('#sp-u').textContent=`${(ME.site||location.origin).replace(/^https?:\/\//,'')} › ${PREFIX[k].replace(/\//g,'')} › ${slug}`;
+    $('#sp-t').textContent=t.length>60?t.slice(0,58)+'…':t;$('#sp-d').textContent=d.length>160?d.slice(0,158)+'…':d||'Sin descripción: Google elegirá un fragmento al azar del contenido.';
+    cnt($('#c-t'),t.length,30,60);cnt($('#c-d'),d.length,70,160);cnt($('#c-ex'),g('excerpt').length,70,160);
+    $('#slugn').textContent=(!isNew&&origSlug&&slug!==origSlug)?'Al cambiar la dirección, la anterior redirigirá automáticamente a la nueva (301).':'';
+    const im=$('#thumb'),u=g('image');if(u){im.src=u;im.hidden=false}else im.hidden=true};
+  $$('[data-k]').forEach(i=>i.addEventListener('input',()=>{dirty=true;if(i.dataset.k==='slug')slugTouched=true;if(i.dataset.k==='title'&&isNew&&!slugTouched)$('#f-slug').value=slugify(i.value);upd()}));
+  ed.addEventListener('input',()=>dirty=true);
+  ed.addEventListener('paste',e=>{e.preventDefault();document.execCommand('insertText',false,e.clipboardData.getData('text/plain'))});
+  $('#pub').onchange=()=>dirty=true;upd();
+  $$('[data-c]').forEach(b=>b.onmousedown=async e=>{e.preventDefault();const c=b.dataset.c;
+    if(c==='img'){$('#cfile').click();return}
+    const[cmd,arg]=c.split(':');document.execCommand(cmd,false,cmd==='createLink'?prompt('URL (https://…)'):arg);dirty=true});
+  $('#cfile').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const u=await upload(f),alt=prompt('Texto alternativo de la imagen (describila):','')||'';ed.focus();document.execCommand('insertHTML',false,`<img src="${esc(u)}" alt="${esc(alt)}">`);dirty=true}catch{}e.target.value=''};
+  $('#file').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{$('#f-image').value=await upload(f);dirty=true;upd()}catch{}};
+  $('#back').onclick=()=>{if(leave()){dirty=false;list()}};
+  const save=async back=>{const d={};$$('[data-k]').forEach(i=>d[i.dataset.k]=i.value);d.content=ed.innerHTML;d.published=$('#pub').checked?1:0;
+    const res=await api(r.id?`${k}/${r.id}`:k,r.id?'PUT':'POST',d);dirty=false;DATA[k]=null;
+    if(back){toast('Guardado');list();return}
+    Object.assign(r,d,{id:res.id||r.id,slug:res.slug});$('#f-slug').value=res.slug;upd();
+    $('#after').innerHTML=d.published?`<br><a href="${esc(res.url)}" target="_blank">Ver publicado ↗</a>`:'';toast(`Guardado${d.published?` · <a href="${esc(res.url)}" target="_blank">ver</a>`:''}`)};
+  $('#save').onclick=()=>save(false).catch(()=>{});$('#saveb').onclick=()=>save(true).catch(()=>{});
+  document.onkeydown=e=>{if((e.ctrlKey||e.metaKey)&&e.key==='s'&&$('#save')){e.preventDefault();$('#save').click()}}}
+
+/* ---------- precios ---------- */
+function prices(){const v=$('#v');
+  v.innerHTML=`<h2 style="margin-bottom:12px">Precios de las páginas existentes</h2><div class="card"><label for="pg">Página</label><select id="pg">${PAGES.map(([u,l])=>`<option value="${u}">${l}</option>`).join('')}</select></div><div id="pl"></div>`;
+  const loadP=async()=>{const page=$('#pg').value,ws=await api('prices?page='+encodeURIComponent(page));
+    $('#pl').innerHTML=ws.map(w=>`<div class="card" data-w="${w.id}"><small>${esc(w.preview)}</small><div class="row" style="margin-top:8px"><div class="pr grow">${w.tokens.map(t=>`<input value="${esc(t)}" aria-label="Valor">`).join('')}</div>${w.edited?'<span class="tag">editado</span>':''}<button class="s" data-s>Guardar</button>${w.edited?'<button class="s d" data-r>Restaurar original</button>':''}</div></div>`).join('')||'<p class="muted">Esta página no tiene precios editables.</p>';
+    $$('[data-w]').forEach(c=>{c.querySelector('[data-s]').onclick=async()=>{await api('prices','PUT',{page,widget_id:c.dataset.w,values:$$('input',c).map(i=>i.value)});toast('Precio actualizado');loadP()};
+      const rb=c.querySelector('[data-r]');if(rb)rb.onclick=async()=>{if(confirm('¿Volver al precio original de la página?')){await api(`prices?page=${encodeURIComponent(page)}&widget_id=${c.dataset.w}`,'DELETE');toast('Restaurado');loadP()}}})};
+  $('#pg').onchange=loadP;loadP()}
+
+/* ---------- auditoría SEO ---------- */
+async function seo(){const v=$('#v');const [po,pk]=await Promise.all([load('posts',true),load('packages',true)]);
+  const all=[...po.map(r=>['posts',r]),...pk.map(r=>['packages',r])],pubd=all.filter(([,r])=>r.published),rows=pubd.map(([k,r])=>[k,r,issues(k,r)]).filter(x=>x[2].length).sort((a,b)=>b[2].filter(i=>i.l==='bad').length-a[2].filter(i=>i.l==='bad').length||b[2].length-a[2].length);
+  const other=location.origin!==ME.site;
+  v.innerHTML=`<h2 style="margin-bottom:12px">Estado SEO</h2>
+  ${other?`<div class="card" style="background:#fff7e6">Estás viendo el sitio en <b>${esc(location.origin)}</b>, pero los canonical y el sitemap apuntan a <b>${esc(ME.site)}</b> (variable <code>SITE_URL</code>). Si ese dominio todavía no está conectado, cambiá <code>SITE_URL</code> en <code>wrangler.jsonc</code>. En este dominio se pide a Google que no indexe.</div>`:''}
+  <div class="row"><div class="card stat"><b>${pubd.length}</b>publicadas</div><div class="card stat"><b>${rows.length}</b>con observaciones</div><div class="card stat"><b>${all.length-pubd.length}</b>borradores</div></div>
+  <div class="card"><h3>Entradas para revisar</h3>${rows.map(([k,r,is])=>`<div class="row" style="padding:8px 0;border-top:1px solid #eef0f6"><div class="grow"><b>${esc(r.title)}</b> <small>${k==='posts'?'blog':'paquete'}</small><br>${is.map(i=>`<span class="chip ${i.l}">${esc(i.m)}</span>`).join('')}</div><button class="s" data-k="${k}" data-id="${r.id}">Editar</button></div>`).join('')||'<p class="muted">Todo en orden 🎉</p>'}</div>
+  <div class="card"><h3>Sitio completo</h3><p><a href="/sitemap.xml" target="_blank">sitemap.xml</a> y <a href="/robots.txt" target="_blank">robots.txt</a> se generan solos: cada entrada publicada entra al sitemap y cada borrador sale.</p>
+  <p class="muted">Después de lanzar: en Google Search Console agregá <b>${esc(ME.site)}</b> y enviá <code>${esc(ME.site)}/sitemap.xml</code>.</p></div>`;
+  $$('[data-id]').forEach(b=>b.onclick=()=>{tab=b.dataset.k;location.hash=tab;shell(true);form(DATA[tab].find(r=>r.id==b.dataset.id))})}
+
+login();
+addEventListener("error",e=>{if(!$("#tm"))toast("Error: "+esc(e.message))});
+</script></body></html>
