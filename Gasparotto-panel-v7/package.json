@@ -1,0 +1,18 @@
+{
+  "name": "gasparotto-viajes",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler pages dev dist --d1=DB --r2=IMAGES",
+    "deploy": "wrangler pages deploy dist",
+    "db:create": "wrangler d1 create gasparotto-db",
+    "r2:create": "wrangler r2 bucket create gasparotto-images",
+    "project:create": "wrangler pages project create mvp-4xl --production-branch main",
+    "secret": "wrangler pages secret put ADMIN_PASSWORD --project-name mvp-4xl",
+    "build": "python3 seo_pass.py",
+    "d1:schema": "wrangler d1 execute gasparotto-db --remote --file=schema.sql",
+    "limpiar-listados": "node scripts/limpiar-listados.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}
