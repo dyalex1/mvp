@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mvp-4xl",
+  "compatibility_date": "2025-01-01",
+  "pages_build_output_dir": "./dist",
+  "d1_databases": [
+    { "binding": "DB", "database_name": "gasparotto-db", "database_id": "64773f2d-ba0d-4204-b792-f173715de839" }
+  ],
+  "r2_buckets": [
+    { "binding": "IMAGES", "bucket_name": "gasparotto-images" }
+  ],
+  "vars": {
+    "WHATSAPP_NUMBER": "5491164199083",
+    "SITE_URL": "https://gasparottoviajes.com"
+  }
+}

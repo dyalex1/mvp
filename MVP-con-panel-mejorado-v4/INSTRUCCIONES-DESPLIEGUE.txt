@@ -1,0 +1,138 @@
+=====================================================================
+ GASPAROTTO VIAJES - CÓMO SUBIR Y DESPLEGAR EN CLOUDFLARE PAGES
+=====================================================================
+
+IMPORTANTE: este proyecto usa Functions (panel /admin, API, SEO dinámico),
+base de datos D1 e imágenes en R2. Por eso NO sirve arrastrar la carpeta
+"dist" en el dashboard de Cloudflare: eso sube solo la parte estática y el
+panel no funciona. Hay que desplegar con Wrangler (opción A) o con Git
+(opción B).
+
+---------------------------------------------------------------------
+ 0) REQUISITOS (una sola vez)
+---------------------------------------------------------------------
+ - Cuenta gratuita de Cloudflare: https://dash.cloudflare.com/sign-up
+ - Node.js 18 o superior: https://nodejs.org  (verificá con: node -v)
+ - Descomprimir el zip y abrir una terminal DENTRO de la carpeta del
+   proyecto (la que tiene package.json y wrangler.jsonc).
+
+---------------------------------------------------------------------
+ OPCIÓN A) DESPLIEGUE CON WRANGLER (recomendada, la más simple)
+---------------------------------------------------------------------
+
+ 1. Instalar dependencias:
+        npm install
+
+ 2. Iniciar sesión en Cloudflare (se abre el navegador, aceptá):
+        npx wrangler login
+
+ 3. Crear la base de datos D1:
+        npm run db:create
+    En la respuesta aparece una línea:  database_id = "xxxxxxxx-xxxx-..."
+    Copiá ese ID y pegalo en wrangler.jsonc, reemplazando
+    REEMPLAZAR_CON_EL_ID_DE_D1.
+
+ 4. Crear las tablas (opcional: el panel también las crea solo la primera
+    vez que entrás, pero así queda listo desde el principio):
+        npm run d1:schema
+
+ 5. Crear el bucket de imágenes R2:
+        npm run r2:create
+    (Si Cloudflare pide activar R2, activalo en el dashboard: tiene plan
+    gratuito, pero puede pedir cargar una tarjeta para habilitarlo.)
+
+ 6. Crear el proyecto de Pages (solo la primera vez):
+        npm run project:create
+
+ 7. Guardar la clave del panel como secret:
+        npm run secret
+    Escribí la clave y Enter. Al tipear NO se ve nada en pantalla, es
+    normal. Elegí una clave larga. Si ya existía, volvé a correrlo para
+    cambiarla.
+
+ 8. Desplegar:
+        npm run deploy
+    Al terminar muestra la URL, por ejemplo https://mvp-4xl.pages.dev
+
+ 9. Entrá a https://mvp-4xl.pages.dev/admin/ con tu clave. La primera
+    vez el panel crea/migra las tablas solo.
+
+ Para actualizar el sitio más adelante: hacé los cambios y corré
+        npm run deploy
+
+---------------------------------------------------------------------
+ OPCIÓN B) DESPLIEGUE CON GIT (se actualiza solo con cada commit)
+---------------------------------------------------------------------
+ 1. Subí el proyecto completo (no solo dist) a un repositorio de GitHub
+    o GitLab.
+ 2. Dashboard de Cloudflare > Workers & Pages > Create > Pages >
+    Connect to Git > elegí el repositorio.
+ 3. Configuración de build:
+        Build command:          python build_cloudflare.py --download && python seo_pass.py
+        (si "dist" ya está listo y no querés regenerar, dejá solo:  python3 seo_pass.py)
+        Build output directory: dist
+        Root directory:         (vacío)
+ 4. Después del primer deploy, en el proyecto > Settings > Bindings:
+        - D1 database:  nombre de variable DB      -> tu base gasparotto-db
+        - R2 bucket:    nombre de variable IMAGES  -> tu bucket gasparotto-images
+    En Settings > Variables and Secrets:
+        - Secret   ADMIN_PASSWORD = tu clave del panel
+        - Variable WHATSAPP_NUMBER = 5491164199083
+        - Variable SITE_URL        = https://gasparottoviajes.com
+    (La base y el bucket se crean antes con los pasos 3 y 5 de la opción A,
+    o desde el dashboard: Storage & Databases > D1 / R2.)
+ 5. Volvé a desplegar (Deployments > Retry deployment) para que tome los
+    bindings.
+
+---------------------------------------------------------------------
+ CONECTAR TU DOMINIO (gasparottoviajes.com)
+---------------------------------------------------------------------
+ 1. Proyecto > Custom domains > Set up a custom domain.
+ 2. Escribí gasparottoviajes.com (y también www.gasparottoviajes.com).
+ 3. Si el dominio ya está en Cloudflare, se configura solo. Si no,
+    cambiá los nameservers en tu registrador por los que te indique
+    Cloudflare.
+ 4. Verificá que SITE_URL en wrangler.jsonc (o en Variables) sea
+    https://gasparottoviajes.com. Se usa para canonical, sitemap y
+    Open Graph.
+ NOTA: en cualquier otro dominio (como mvp-4xl.pages.dev) el sitio se
+ marca como "no indexar" a propósito, para no competir con el dominio
+ principal. Si querés indexar desde pages.dev, poné esa URL en SITE_URL.
+
+---------------------------------------------------------------------
+ DESPUÉS DE LANZAR
+---------------------------------------------------------------------
+ - Google Search Console: agregá tu dominio y enviá
+   https://gasparottoviajes.com/sitemap.xml
+ - Recomendado: proteger /admin* y /api/* con Cloudflare Access
+   (Zero Trust > Access > Applications > Self-hosted > permitir solo
+   tus emails). Es gratis hasta 50 usuarios y agrega una segunda capa
+   de seguridad al login.
+
+---------------------------------------------------------------------
+ PROBAR EN LOCAL (opcional)
+---------------------------------------------------------------------
+        npm install
+        copy .dev.vars.example .dev.vars      (en Mac/Linux: cp)
+        (editá .dev.vars y poné la clave que quieras en ADMIN_PASSWORD)
+        npm run dev
+ Abrí http://localhost:8788/admin/
+
+---------------------------------------------------------------------
+ PROBLEMAS FRECUENTES
+---------------------------------------------------------------------
+ * "Clave incorrecta" aunque la escribís bien:
+     - Volvé a cargar el secret con  npm run secret  y desplegá de nuevo
+       (npm run deploy). Al tipearla no se ve nada; escribila y Enter.
+     - Esperá 10 minutos si saltó "Demasiados intentos".
+ * "Falta el secret ADMIN_PASSWORD": no está cargado el secret (paso 7).
+ * "D1 no está conectada": falta el binding DB. Revisá que
+   database_id en wrangler.jsonc sea el correcto y redesplegá.
+ * Las imágenes no se pueden subir: falta el bucket R2 (paso 5). Mientras
+   tanto podés pegar URLs https de imágenes.
+ * El panel da 404 o /api no responde: se desplegó arrastrando la carpeta.
+   Usá  npm run deploy  (opción A) o Git (opción B).
+ * Después de iniciar sesión vuelve al login: el navegador bloquea las
+   cookies. Permitilas para el sitio.
+ * Cambié algo y no se ve: refrescá con Ctrl+F5.
+ * Para ver errores en vivo:  npx wrangler pages deployment tail
