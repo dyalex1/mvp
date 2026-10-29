@@ -4,7 +4,7 @@
   "compatibility_date": "2025-01-01",
   "pages_build_output_dir": "./dist",
   "d1_databases": [
-    { "binding": "DB", "database_name": "gasparotto-db", "database_id": "REEMPLAZAR_CON_EL_ID_DE_D1" }
+    { "binding": "DB", "database_name": "gasparotto-db", "database_id": "64773f2d-ba0d-4204-b792-f173715de839" }
   ],
   "r2_buckets": [
     { "binding": "IMAGES", "bucket_name": "gasparotto-images" }
